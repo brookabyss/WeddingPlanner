@@ -1,0 +1,22 @@
+<a href="/weddings/show">Dashboard</a>
+<a asp-controller="User" asp-action="Logout">Logout</a>
+<h1>Welcome to the Wedding Planner</h1>
+<table>
+    <tr>
+        <th>Wedding</th>
+        <th>Date</th>
+        <th>Guest</th>
+        <th>Action</th>
+    </tr>
+@foreach(var wedding in ViewBag.weddings){
+    <tr>
+        <td>@wedding.WedderOne & @wedding.WedderTwo </td>
+        <td>@wedding.Date</td>
+        <td>@wedding.Invitations.Count</td>
+        <td><a asp-controller="Wedding" asp-action="UpdateInvite" asp-route-id=@wedding.WeddingsId asp-route-choice="RSVP">RSVP</a><a asp-controller="Wedding" asp-action="UpdateInvite" asp-route-id=@wedding.WeddingsId asp-route-choice="Un-RSVP">Un-RSVP</a><a asp-controller="Wedding" asp-action="UpdateInvite" asp-route-id=@wedding.WeddingsId asp-route-choice="Delete">Delete</a></td>
+        
+    </tr>
+}
+</table>
+<a asp-controller="Wedding" asp-action="ToNew">New Wedding</a>
+

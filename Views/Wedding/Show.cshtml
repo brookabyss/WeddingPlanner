@@ -1,0 +1,9 @@
+@model wedding.Models.Weddings 
+<a href="/weddings/show">Dashboard</a>
+<a asp-controller="User" asp-action="Logout">Logout</a>
+<p>Welcome to the Show page</p>
+<h1>@ViewBag.Wedding.WedderOne & @ViewBag.Wedding.WedderTwo s wedding</h1>
+<h2>Date: @ViewBag.Wedding.Date</h2>
+@foreach( var guest in ViewBag.Wedding.Invitations){
+    <p>guest.Guests.FirstName</p>
+}

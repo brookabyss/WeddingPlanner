@@ -1,0 +1,14 @@
+@model wedding.Models.WeddingsView 
+
+<a asp-controller="User" asp-action="Logout">Logout</a>
+<form asp-controller="Wedding" asp-action="Create" method="post"> 
+    <label asp-for="WedderOne">Wedder one: </label>
+    <input asp-for="WedderOne"><br>
+     <label asp-for="WedderTwo">Wedder Two: </label>
+     <input asp-for="WedderTwo"><br>
+      <label asp-for="Date">Date: </label>
+      <input asp-for="Date" type="date">
+       <label asp-for="Address">Wedding Address: </label>
+       <input asp-for="Address">
+       <input type="submit" value="Create">
+</form>
